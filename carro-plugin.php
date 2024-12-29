@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Carro
  * Description: Añade selectores de variaciones al carrito de WooCommerce. Arregla problemas de plugins pensados para el anterior carrito de Woocommerce
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Alejandro Rosado
  * Text Domain: carro-plugin
  */

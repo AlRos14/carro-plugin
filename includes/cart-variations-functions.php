@@ -261,8 +261,7 @@ function reset_cart_product() {
     }
 
     $cart_item_key = isset($_POST['cart_item_key']) ? sanitize_text_field($_POST['cart_item_key']) : '';
-    $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1;
-
+    
     if (empty($cart_item_key)) {
         wp_send_json_error(['message' => 'Cart item key no proporcionada.']);
         return;
@@ -279,6 +278,7 @@ function reset_cart_product() {
 
     // Obtener el ID del producto y sus variaciones (si las hay)
     $product_id = $cart_item['product_id'];
+    $quantity = $cart_item['quantity'];
     $variation_id = isset($cart_item['variation_id']) && $cart_item['variation_id'] > 0 ? $cart_item['variation_id'] : 0;
     $variations = isset($cart_item['variation']) ? $cart_item['variation'] : [];
 

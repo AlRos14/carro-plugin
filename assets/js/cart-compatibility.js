@@ -1,5 +1,5 @@
 (async function () {
-    async function simulateProductReset(cartItemKey, quantity = 1) {
+    async function simulateProductReset(cartItemKey) {
         try {
             const response = await fetch(cartVariationsData.ajax_url, {
                 method: "POST",
@@ -7,7 +7,6 @@
                 body: new URLSearchParams({
                     action: "reset_cart_product",
                     cart_item_key: cartItemKey,
-                    quantity: quantity,
                 }),
             });
 
@@ -27,7 +26,7 @@
             // Procesar cada ítem del carrito
             for (const cartItemKey of cartItemKeys) {
                 // Simular el restablecimiento del producto (ajusta la cantidad según sea necesario)
-                const success = await simulateProductReset(cartItemKey, 2);
+                const success = await simulateProductReset(cartItemKey);
 
                 if (success) {
                     break; // Solo necesitamos simular un restablecimiento
